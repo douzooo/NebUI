@@ -78,7 +78,6 @@ public class NebRenderingHandler {
                 f.getScroll().getScrollbar().render((float) (elementX + element.getWidth() - 4), elementY, 8, f.getScroll().getScrollbar().getHeight(), 280, f.getScroll().get());
             }
         }
-        // Recursively render child elements within the parent's boundaries
 
         if(element instanceof NebFrame){
             NebFrame f = (NebFrame) element;
@@ -135,7 +134,6 @@ public class NebRenderingHandler {
                 newHoveredElement = updateElementHoverState(component, mouseX, mouseY, 0, 0, screenWidth, screenHeight, newHoveredElement);
             }
 
-            // Handle hover exit and enter events
             if (newHoveredElement != currentlyHoveredElement) {
                 if (currentlyHoveredElement != null) {
                     currentlyHoveredElement.handleHoverExit();
@@ -160,7 +158,6 @@ public class NebRenderingHandler {
             currentHoveredElement = element;
         }
 
-        // Recursively check child elements
         for (int i = element.getChildren().size() - 1; i >= 0; i--) {
             NebNode child = element.getChildren().get(i);
             currentHoveredElement = updateElementHoverState(child, mouseX, mouseY, elementX, elementY, (float) element.getWidth(), (float) element.getHeight(), currentHoveredElement);
@@ -187,6 +184,6 @@ public class NebRenderingHandler {
     }
 
     public void click(int width, int height) {
-        // Implement click logic if necessary
+        
     }
 }
